@@ -6,15 +6,17 @@ import { useState } from 'react'
 const App = () => {
 
 const [count, setCount] = useState(0)
+const [Users, setUsers] = useState({name: "Rahmat", id:110})
 
-console.log(count);
-
+console.log("App rendering");
   return (
-    <div>
-    <h1>Memoization</h1>
-     <button className='bg-red-500 p-2 rounded m-2' onClick={()=>setCount(count+1)}>Button</button>
-      <Home />
-      <About />
+    <div className='flex flex-col justify-center items-center h-screen'>
+    <h1>Count is {count}</h1>
+    <h1>Name is {Users.name}</h1>
+     <button className='bg-red-500 p-2 rounded m-2' onClick={()=>setCount(count+1)}>Count</button>
+     <button className='bg-red-500 p-2 rounded m-2' onClick={()=>setUsers({...Users, name: "Afzal" })}>Change</button>
+      <Home Users={Users}/>
+      <About Users={Users}/>
     </div>
   )
 }
