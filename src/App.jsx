@@ -21,7 +21,7 @@ console.log("Calculation rendering");
   for(let i=0; i<100000000; i++){
     sum += i;
  } return sum;
-},[]);
+},[Users]);
 
 
 
