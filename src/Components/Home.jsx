@@ -1,8 +1,9 @@
 import React from 'react'
 
 
-const Home = ({Users}) => {
+const Home = ({greet}) => {
     console.log("Home rendering");
+    greet();
   return (
     <div>
       <h1>Home</h1>
@@ -10,8 +11,7 @@ const Home = ({Users}) => {
   )
 }
 
-export default React.memo(Home , (prevProps, nextProps) => {
-    return prevProps.Users.id === nextProps.Users.id;
+export default React.memo(Home);
     
    
-});
+
